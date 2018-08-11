@@ -22,6 +22,7 @@ class MLPNet(nn.Module):
     
     def name(self):
         return "MLP"
+model = MLP()
     
 
 class Net(torch.nn.Module):
@@ -37,3 +38,11 @@ class Net(torch.nn.Module):
         x = F.relu(self.hidden(x))  # activation function for hidden layer
         x = self.predict(x)  # linear output
         return x
+
+#device = torch.device('cpu')
+device = torch.device('cuda')
+models = torch.nn.Sequential(
+          torch.nn.Linear(D_in, H),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H, D_out),
+        ).to(device)
