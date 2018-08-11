@@ -24,7 +24,7 @@ class MLPNet(nn.Module):
         return "MLP"
 model = MLP()
     
-
+'''
 class Net(torch.nn.Module):
     def __init__(self, n_feature, n_hidden, n_output):
         super(Net, self).__init__()
@@ -46,3 +46,4 @@ models = torch.nn.Sequential(
           torch.nn.ReLU(),
           torch.nn.Linear(H, D_out),
         ).to(device)
+'''
